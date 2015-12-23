@@ -24,11 +24,10 @@ public:
 
 private:
     std::vector<int> m_data;
-    cache::call_once_thread_safe m_callcache;
+    cache::call_once<cache::ThreadSafeStd> m_callcache;
 };
 
 int main() {
-
     A a;
     std::cout << a.get_foo().size() << std::endl;
     std::cout << a.get_foo().size() << std::endl;
